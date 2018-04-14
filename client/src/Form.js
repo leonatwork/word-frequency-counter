@@ -13,15 +13,31 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      num: ''
+      num: '',
+      response: ''
     };
     this.numSubmit = this.numSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({ response: res.express }))
+      .catch(err => console.log(err));
+  }
+
+  callApi = async () => {
+    const response = await fetch('/h');
+    const body = await response.json();
+
+    if (response.status !== 200) throw Error(body.message);
+
+    return body;
+  };
+
 render(){
     var num;
     var results;
-
+    var piko = <p className="App-intro">{this.state.response}</p>;
     if (this.state.num === '') {
       num = <div>
         <h1>Word frequency counter</h1>
@@ -39,6 +55,7 @@ render(){
       num = <div><h1>Word frequency counter</h1></div>;
         results = <div>
           display results
+          {piko}
         </div>;
     }
     return(
