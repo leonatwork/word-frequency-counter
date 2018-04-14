@@ -26,11 +26,11 @@ render(){
       num = <div>
         <h1>Word frequency counter</h1>
         <form onSubmit={this.numSubmit}>
-          <div>
+          <div className="card">
           <label>How many words you want to search?</label> <br/>
-          <input type="number" placeholder="Eg: 15" ref="name"/>
+          <input className="inp" type="number" placeholder="Eg: 15" ref="name"/>
           </div>
-					<input type="submit" value="submit"/>
+					<input className="feedback-button" type="submit" value="submit"/>
         </form>
       </div>;
       results = '';
