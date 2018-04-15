@@ -5,10 +5,7 @@ var cheerio = require('cheerio');
 const app = express();
 const port = process.env.PORT || 5001;
 
-// app.get('/h', (req, res) => {
-//   res.send({ express: 'Hello World' });
-// });
-app.get('/h', function(req, res){
+app.get('/scrape', function(req, res){
 
     url = 'http://terriblytinytales.com/test.txt';
     request(url, function(error, response, html){
@@ -23,15 +20,8 @@ app.get('/h', function(req, res){
                 json.title = title;
             })
             var str = json.title;
-
-
-
-             res.send({ express: str });
-             
-
+            res.send({ express: str });
         }
-
-
     })
 })
 

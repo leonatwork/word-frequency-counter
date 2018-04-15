@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class Form extends Component {
 	  numSubmit(event) {
     var num = this.refs.name.value;
-    this.setState({num: num}, function(){
-      console.log(this.state);
-    });
+    this.setState({num: num});
   }
 
 
@@ -26,7 +24,7 @@ class Form extends Component {
   }
 
   callApi = async () => {
-    const response = await fetch('/h');
+    const response = await fetch('/scrape');
     const body = await response.json();
 
     if (response.status !== 200) throw Error(body.message);
@@ -38,10 +36,6 @@ render(){
     var num;
     var results;
     var piko = this.state.response;
-
-
-
-
     if (this.state.num === '') {
       num = <div>
         <h1>Word frequency counter</h1>
@@ -65,9 +59,6 @@ render(){
 
           var keysSorted = Object.keys(wordCounts).sort(function(a,b){return wordCounts[b]-wordCounts[a]});
 
-          for (var i = 0; i < this.state.num; i++) {
-            console.log(keysSorted[i],wordCounts[keysSorted[i]]);
-          }
           num = <div><h1>Word frequency counter</h1></div>;
 
             const rows = [];
@@ -84,8 +75,7 @@ render(){
             }
               rows.push(<tr>{column}</tr>);
             }
-            results = <table align="center">{rows}</table>;
-            console.log(rows);
+            results = <table align="center"><tbody>{rows}</tbody></table>;
     }
     return(
       <div>
