@@ -22,7 +22,12 @@ A webapp which counts and displays the most recurring words on a page fetched fr
 - Based on user's input the required number of words are rendered on the page.
 
 ## Demo
-
+##### Homepage
+![alt text](https://github.com/leonatwork/word-frequency-counter/blob/master/images/table.png "HomePage")
+##### Output
+![alt text](https://github.com/leonatwork/word-frequency-counter/blob/master/images/table.png "HomePage")'
+![alt text](https://github.com/leonatwork/word-frequency-counter/blob/master/images/table.png "HomePage")
+![alt text](https://github.com/leonatwork/word-frequency-counter/blob/master/images/table.png "HomePage")
 
 ## How to run
 #### Pre-requisites
