@@ -37,7 +37,11 @@ class Form extends Component {
 render(){
     var num;
     var results;
-    var piko = <p className="App-intro">{this.state.response}</p>;
+    var piko = this.state.response;
+
+
+
+
     if (this.state.num === '') {
       num = <div>
         <h1>Word frequency counter</h1>
@@ -52,16 +56,25 @@ render(){
       results = '';
 
     } else if (this.state.num !== '') {
-      num = <div><h1>Word frequency counter</h1></div>;
-        results = <div>
-          display results
-          {piko}
-        </div>;
+          var wordCounts = { };
+          var words = piko.split(/\s+/);
+
+          for(var i = 0; i < words.length; i++){
+              wordCounts[words[i].toLowerCase()] = (wordCounts[words[i].toLowerCase()] || 0) + 1;
+          }
+
+          var keysSorted = Object.keys(wordCounts).sort(function(a,b){return wordCounts[b]-wordCounts[a]});
+
+          for (var i = 0; i < this.state.num; i++) {
+            console.log(keysSorted[i],wordCounts[keysSorted[i]]);
+          }
+          num = <div><h1>Word frequency counter</h1></div>;
+
+          results = <div></div>;
     }
     return(
       <div>
         {num}
-        ----------------------------------
         {results}
       </div>
     );
