@@ -70,7 +70,22 @@ render(){
           }
           num = <div><h1>Word frequency counter</h1></div>;
 
-          results = <div></div>;
+            const rows = [];
+
+            for (let i=-1; i<this.state.num; i++) {
+            let column = [];
+            if (i === -1) {
+              column.push(<th className="head">Word</th>);
+              column.push(<th className="head">Frequency</th>);
+            }
+            else {
+              column.push(<td>{keysSorted[i]}</td>);
+              column.push(<td>{wordCounts[keysSorted[i]]}</td>);
+            }
+              rows.push(<tr>{column}</tr>);
+            }
+            results = <table align="center">{rows}</table>;
+            console.log(rows);
     }
     return(
       <div>
