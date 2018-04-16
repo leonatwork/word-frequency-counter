@@ -23,7 +23,7 @@ A webapp which counts and displays the most recurring words on a page fetched fr
 
 ## Demo
 
-![alt text](https://github.com/leonatwork/word-frequency-counter/blob/master/videp/videodemo.gif "Demo")
+![alt text](https://github.com/leonatwork/word-frequency-counter/blob/master/videp/demo.gif "Demo")
 
 ## How to run
 #### Pre-requisites
