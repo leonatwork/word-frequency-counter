@@ -23,7 +23,7 @@ A webapp which counts and displays the most recurring words on a page fetched fr
 
 ## Demo
 
-![alt text](https://github.com/leonatwork/word-frequency-counter/blob/master/images/Video.gif "Demo")
+![alt text](https://github.com/leonatwork/word-frequency-counter/blob/master/videp/videodemo.gif "Demo")
 
 ## How to run
 #### Pre-requisites
@@ -47,10 +47,11 @@ Then enter the project folder using :
 ```
 $ cd word-frequency-counter
 ```
-To install the required node modules, type :
+To install the required node modules, type
 ```
 $ yarn
 ```
+once inside the root folder to install node dependencies and again inside the client folder to install client and react dependencies.
 #### Running the app
 While inside the repo's root folder (word-frequency-counter), run :
 ```
